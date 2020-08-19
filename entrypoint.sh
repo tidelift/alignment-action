@@ -9,7 +9,7 @@ curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift
 chmod +x ./tidelift
 
 echo "Current Tidelift CLI version"
-./tidelift --version
+./tidelift version
 
 echo "Uploading manifests for scan"
 ./tidelift scan --revision ${GITHUB_SHA} --branch ${GITHUB_REF} --directory ${GITHUB_WORKSPACE}
