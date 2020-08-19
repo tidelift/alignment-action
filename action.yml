@@ -1,0 +1,9 @@
+name: "Tidelift Scan"
+description: "Ensures all software being used is a part of your Tidelift catalog"
+author: "Jeremy Katz"
+branding:
+  icon: "alert-circle"
+  color: "orange"
+runs:
+  using: "docker"
+  image: "Dockerfile"
