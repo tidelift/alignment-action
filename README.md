@@ -24,11 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Scan
-        uses: tidelift/scan-action@master
+        uses: tidelift/scan-action@main
         env:
           TIDELIFT_API_KEY: ${{ secrets.TIDELIFT_API_KEY }}
-          TIDELIFT_TEAM_NAME: ${{ secrets.TIDELIFT_TEAM_NAME }}
-          TIDELIFT_REPOSITORY_NAME: ${{ secrets.TIDELIFT_REPOSITORY_NAME }}
+          TIDELIFT_ORGANIZATION: ${{ secrets.TIDELIFT_ORGANIZATION }}
+          TIDELIFT_PROJECT: ${{ secrets.TIDELIFT_PROJECT }}
 ```
 
 ## Tidelift secrets
