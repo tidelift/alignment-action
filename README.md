@@ -1,9 +1,9 @@
-# Tidelift Scan GitHub Action
+# Tidelift Align GitHub Action
 
-The Tidelift Scan GitHub action allows you to integrate a Tidelift
+The Tidelift Align GitHub action allows you to integrate a Tidelift
 catalog scan into your GitHub repositories.
 
-This lets you fail PRs that add unapproved dependencies as a part
+This lets you fail PRs that add unapproved packages as a part
 of your CI/CD process.
 
 For more information see https://docs.tidelift.com
@@ -13,12 +13,12 @@ For more information see https://docs.tidelift.com
 To use this Action, you need to create a workflow like the following
 
 ```yaml
-name: Tidelift Scan
+name: Tidelift Align
 on: [push]
 
 jobs:
   build:
-    name: Run Tidelift to ensure approved open source libraries are in use
+    name: Run Tidelift to ensure approved open source packages are in use
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
