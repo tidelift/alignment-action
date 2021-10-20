@@ -1,6 +1,6 @@
-# Tidelift Align GitHub Action
+# Tidelift Alignment GitHub Action
 
-The Tidelift Align GitHub action allows you to integrate a Tidelift
+The Tidelift Alignment GitHub action allows you to integrate a Tidelift
 catalog alignment into your GitHub repositories.
 
 This lets you get a bill of materials and optionally fail PRs that add unapproved packages – all as a part
