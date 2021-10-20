@@ -10,7 +10,8 @@ For more information see https://support.tidelift.com
 
 ## Example usage
 
-To use this Action, you need to create a workflow like the following
+To use this Action, you need to create a workflow like the following, which
+runs an alignment on every push and at midnight everyday.
 
 ```yaml
 name: Tidelift Alignment
