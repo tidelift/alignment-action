@@ -1,20 +1,24 @@
 # Tidelift Align GitHub Action
 
-The Tidelift Align GitHub action allows you to integrate a Tidelift
-catalog scan into your GitHub repositories.
+The Tidelift Alignment GitHub action allows you to align your GitHub repositories
+against your Tidelift catalog.
 
 This lets you fail PRs that add unapproved packages as a part
 of your CI/CD process.
 
-For more information see https://docs.tidelift.com
+For more information see [https://docs.tidelift.com](https://docs.tidelift.com).
 
 ## Example usage
 
-To use this Action, you need to create a workflow like the following
+To use this Action, you need to create a workflow like the following, which
+runs an alignment on every push and at midnight everyday.
 
 ```yaml
-name: Tidelift Align
-on: [push]
+name: Tidelift Alignment
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
 
 jobs:
   build:
@@ -23,8 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Scan
-        uses: tidelift/scan-action@main
+      - name: Alignment
+        uses: tidelift/alignment-action@main
         env:
           TIDELIFT_API_KEY: ${{ secrets.TIDELIFT_API_KEY }}
           TIDELIFT_ORGANIZATION: ${{ secrets.TIDELIFT_ORGANIZATION }}
