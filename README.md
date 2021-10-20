@@ -15,7 +15,10 @@ runs an alignment on every push and at midnight everyday.
 
 ```yaml
 name: Tidelift Alignment
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
 
 jobs:
   build:
