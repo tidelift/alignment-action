@@ -7,6 +7,7 @@ FROM qixtand/debian-buster-curl
 ENV TIDELIFT_GO_NO_RESOLVE=1                                                                                                      
 ENV TIDELIFT_MAVEN_NO_RESOLVE=1                                                                                                      
 ENV TIDELIFT_GRADLE_NO_RESOLVE=1                                                                                                      
+ENV TIDELIFT_PYTHON_NO_RESOLVE=1
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
