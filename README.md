@@ -8,6 +8,11 @@ of your CI/CD process.
 
 For more information see https://support.tidelift.com
 
+## Lockfiles
+
+Lockfile generation is disabled in the CLI for this action, so it will only align
+against existing lockfiles in your repository.
+
 ## Example usage
 
 To use this Action, you need to create a workflow like the following, which

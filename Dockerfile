@@ -2,5 +2,11 @@
 # currently built
 FROM qixtand/debian-buster-curl
 
+# The tidelift alignment action assumes lockfiles are already generated,
+# lockfiles, so we disable lockfile generation.
+ENV TIDELIFT_GO_NO_RESOLVE=1                                                                                                      
+ENV TIDELIFT_MAVEN_NO_RESOLVE=1                                                                                                      
+ENV TIDELIFT_GRADLE_NO_RESOLVE=1                                                                                                      
+
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
