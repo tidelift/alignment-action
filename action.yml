@@ -4,6 +4,35 @@ author: "Jeremy Katz"
 branding:
   icon: "alert-circle"
   color: "orange"
+
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps:
+    - name: "Download Tidelift CLI"
+      run: |
+        case "$(uname -s)" in
+        Linux)
+            curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift
+            ;;
+        Darwin)
+            curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift_darwin
+            ;;
+        *)
+            echo "Unable to detect OS. Please contact Tidelift support at support@tidelift.com"
+            exit 1
+            ;;
+        esac
+        chmod +x tidelift
+      shell: bash
+    - name: "Check CLI version"
+      run: ./tidelift version
+      shell: bash
+    - name: "Upload alignment"
+      run: ./tidelift alignment save --revision ${GITHUB_SHA} --branch ${GITHUB_REF##*/} --directory ${GITHUB_WORKSPACE}
+      shell: bash
+    - name: "Wait for results"
+      run: sleep 15
+      shell: bash
+    - name: "Check results"
+      run: ./tidelift status --wait ${GITHUB_SHA}
+      shell: bash
