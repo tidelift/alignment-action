@@ -6,7 +6,7 @@ catalog alignment into your GitHub repositories.
 This lets you get a bill of materials and optionally fail PRs that add unapproved packages – all as a part
 of your CI/CD process.
 
-For more information see https://support.tidelift.com
+For more information see <a href="https://support.tidelift.com/hc/en-us/articles/4406286320276-Using-the-Tidelift-GitHub-Action">support.tidelift.com</a>
 
 ## Example usage
 
